@@ -24,6 +24,7 @@ syntax keyword fbActionNames Exec  contained
 syntax keyword fbActionNames ExecCommand  contained
 syntax keyword fbActionNames Execute  contained
 syntax keyword fbActionNames Exit  contained
+syntax keyword fbActionNames Focus  contained
 syntax keyword fbActionNames FocusUp  contained
 syntax keyword fbActionNames FocusDown  contained
 syntax keyword fbActionNames FocusLeft  contained
@@ -31,6 +32,7 @@ syntax keyword fbActionNames FocusRight  contained
 syntax keyword fbActionNames Fullscreen  contained
 syntax keyword fbActionNames HideMenus  contained
 syntax keyword fbActionNames Iconify  contained
+syntax keyword fbActionNames Kill  contained
 syntax keyword fbActionNames KillWindow  contained
 syntax keyword fbActionNames LeftWorkspace  contained
 syntax keyword fbActionNames Lower  contained
@@ -86,12 +88,15 @@ syntax keyword fbActionNames Shade  contained
 syntax keyword fbActionNames ShadeWindow  contained
 syntax keyword fbActionNames ShowDesktop  contained
 syntax keyword fbActionNames StartTabbing  contained
+syntax keyword fbActionNames StartMoving  contained
+syntax keyword fbActionNames StartResizing  contained
 syntax keyword fbActionNames Stick  contained
 syntax keyword fbActionNames StickWindow  contained
 syntax keyword fbActionNames Tab  contained
 syntax keyword fbActionNames TakeToWorkspace  contained
 syntax keyword fbActionNames TakeToNextWorkspace  contained
 syntax keyword fbActionNames TakeToPrevWorkspace  contained
+syntax keyword fbActionNames ToggleCmd  contained
 syntax keyword fbActionNames ToggleDecor  contained
 syntax keyword fbActionNames WindowMenu  contained
 syntax keyword fbActionNames Workspace  contained
@@ -111,13 +116,16 @@ syntax keyword fbActionNames WorkspaceMenu  contained
 
 syntax keyword fbModifierNames Control Shift  contained
 syntax keyword fbModifierNames Mod1 Mod2 Mod3 Mod4 Mod5  contained
-syntax keyword fbModifierNames None  contained
+syntax keyword fbModifierNames None Menu  contained
 syntax keyword fbModifierNames OnDesktop OnToolbar OnTitlebar OnWindow contained
+syntax keyword fbModifierNames OnLeftGrip OnRightGrip OnWindowBorder contained
+syntax keyword fbModifierNames Home Delete Print Tab  contained
+syntax match fbModifierNames  /XF86\w\+/ contained
 
 " reference corners
-syntax keyword fbParameterNames UpperLeft Upper UpperRight contained
-syntax keyword fbParameterNames Left Right contained
-syntax keyword fbParameterNames LowerLeft Lower LowerRight contained
+syntax keyword fbParameterNames Left Right Center contained
+syntax match fbParameterNames / \(Top\|Upper\)\(Left\|Right\)*/ contained
+syntax match fbParameterNames /\(Bottom\|Lower\)\(Left\|Right\)*/ contained
 " deiconfiy
 syntax keyword fbParameterNames LastWorkspace Last All AllWorkspace OriginQuiet contained
 
