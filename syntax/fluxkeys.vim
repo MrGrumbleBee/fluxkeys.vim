@@ -142,11 +142,11 @@ syntax match   fbAction /\w\+/ contained contains=fbActionNames nextgroup=fbPara
 syntax match   fbExecAction /Exec\(ute\|Command\)*\s\+.*$/ contained contains=fbActionNames
 
 " macro magic
-syntax region  fbMacroParameter start=/./ end=/.\{-\}}/ contained contains=fbParameterNames,fbParameterNumber
-syntax match   fbMacroAction /\w\+/ contained contains=fbActionNames nextgroup=fbMacroParameter
-syntax region  fbMacroExecAction start=/{Exec\(ute\|Command\)*\s\+/hs=s+1 end=/.\{-}}/he=e-1 contained contains=fbActionNames oneline
-syntax region  fbMacro start=/{/ end=/.\{-}}/ contained contains=fbMacroExecAction,fbMacroAction oneline nextgroup=fbMacro skipwhite
-syntax match   fbMacroStart /MacroCmd\s\+/ contained contains=fbActionNames nextgroup=fbMacro
+"syntax region  fbMacroParameter start=/./ end=/.\{-\}}/ contained contains=fbParameterNames,fbParameterNumber
+"syntax match   fbMacroAction /\w\+/ contained contains=fbActionNames nextgroup=fbMacroParameter
+"syntax region  fbMacroExecAction start=/{Exec\(ute\|Command\)*\s\+/hs=s+1 end=/.\{-}}/he=e-1 contained contains=fbActionNames oneline
+"syntax region  fbMacro start=/{/ end=/.\{-}}/ contained contains=fbMacroExecAction,fbMacroAction oneline nextgroup=fbMacro skipwhite
+"syntax match   fbMacroStart /MacroCmd\s\+/ contained contains=fbActionNames nextgroup=fbMacro
 
 " anything but a valid modifier is colored Error
 syntax match   fbKeyStart /^\w\+/  contained contains=fbModifierNames
